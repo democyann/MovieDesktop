@@ -10,6 +10,12 @@ using System.Windows.Forms;
 
 using System.Diagnostics;
 
+/**
+ * 动态桌面
+ * 作者：democyann
+ * url:https://democyann.moe/about/
+ * github:https://github.com/democyann
+ * */
 namespace MovieDesktop
 {
     public partial class Form1 : Form
@@ -177,6 +183,9 @@ namespace MovieDesktop
             axWindowsMediaPlayer1.Ctlcontrols.previous();
         }
 
+        /**
+         * 获取按键抬起动作，透传至底层窗体
+         * */
         private void axWindowsMediaPlayer1_MouseUpEvent(object sender, AxWMPLib._WMPOCXEvents_MouseUpEvent e)
         {
             if (e.nButton == 1)
@@ -197,6 +206,9 @@ namespace MovieDesktop
             }
         }
 
+        /**
+         * 获取按键按下动作，透传至底层窗体
+         * */
         private void axWindowsMediaPlayer1_MouseDownEvent(object sender, AxWMPLib._WMPOCXEvents_MouseDownEvent e)
         {
             //Debug.WriteLine(e.fX.ToString());
@@ -219,6 +231,11 @@ namespace MovieDesktop
 
         }
 
+        /**
+         * 获取鼠标移动动作 
+         * 设想是通过组合抬起和按下动作来实现图标拖动
+         * 但目前失败了
+         * */
         private void axWindowsMediaPlayer1_MouseMoveEvent(object sender, AxWMPLib._WMPOCXEvents_MouseMoveEvent e)
         {
 
