@@ -2,8 +2,9 @@
 ###### 梦幻桌面
 
 ### 简介
-这是一款使用C#开发的动态桌面小程序，可以将自己喜欢的视频设置成桌面，支持列表播放[演示视频](http://www.bilibili.com/video/av2304939/)<br>
-* 需要Windows Media Player 支持 *<br>
+这是一款使用C#开发的动态桌面小程序，可以将自己喜欢的视频设置成桌面，支持列表播放<br>
+[演示视频](http://www.bilibili.com/video/av2304939/)<br>
+**需要Windows Media Player 支持**<br>
 目前所支持的功能
 * 播放列表
 * 上一桌面
@@ -15,7 +16,7 @@
 ### 使用方法
 
 在`F:\Programtempfile\`中新建一个`1.wpl`文件，编写Windows Media Player的播放列表<br>
-*也可以在程序代码中更改文件位置（L76） *
+**也可以在程序代码中更改文件位置(L76)**
 下面是一个示例：<br>
 ~~~~
 <?wpl version="1.0"?>
@@ -33,7 +34,7 @@
     </body>
 </smil>
 ~~~~
-*你也可以使用 Windows Media Player 自动生成该文件，详细方法参见 WMP 的保存播放列表的帮助*
+**你也可以使用 Windows Media Player 自动生成该文件，详细方法参见 WMP 的保存播放列表的帮助**
 
 接下来编译好程序启动即可。
 
