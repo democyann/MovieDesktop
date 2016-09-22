@@ -9,20 +9,25 @@ using System.Text;
 using System.Windows.Forms;
 
 using System.Diagnostics;
+using System.Configuration;
 
 /**
  * 动态桌面
  * 作者：democyann
  * url:https://democyann.moe/about/
  * github:https://github.com/democyann
+ * License: GPLv3
  * */
 namespace MovieDesktop
 {
     public partial class Form1 : Form
     {
+        string wplpath;
         public Form1()
         {
             InitializeComponent();
+            wplpath = ConfigurationManager.AppSettings["wplpath"];
+            Debug.Write("+:" + wplpath);
         }
         [DllImport("user32.dll")]
         public static extern long SetParent(long hWndChild, long hWndNewParent);
@@ -68,6 +73,7 @@ namespace MovieDesktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             axWindowsMediaPlayer1.uiMode = "None";
             axWindowsMediaPlayer1.enableContextMenu = false;
             axWindowsMediaPlayer1.settings.autoStart = false;
@@ -79,7 +85,7 @@ namespace MovieDesktop
             //s.Width += 10;
             this.Size = s;
             axWindowsMediaPlayer1.Size = s;
-            axWindowsMediaPlayer1.URL = "F:\\Programtempfile\\1.wpl";
+            axWindowsMediaPlayer1.URL = wplpath;
             axWindowsMediaPlayer1.Ctlcontrols.play();
             h1 = 0;
             int cont = 0;
@@ -290,6 +296,18 @@ namespace MovieDesktop
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 暂停ToolStripMenuItem.Text = "暂停";
             }
+        }
+
+        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form a = new About();
+            a.Show();
+        }
+
+        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form set = new Setting();
+            set.Show();
         }
 
     }
